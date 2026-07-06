@@ -1,0 +1,384 @@
+/* CSS untuk halaman: transaksi/struk.view.php */
+        @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* ── Brand palette ── */
+            --navy: #0A1D4B;
+            --navy-soft: #E9ECF4;
+            --navy-border: #C6CCE0;
+            --crimson: #9E0E18;
+
+            --gold-dark: #8a6a1f;
+            --gold-main: #CC9E4A;
+            --gold-mid: #dbb96a;
+            --gold-light: #f5e9cc;
+            --gold-border: #e2c47e;
+            --gold-shine: #fdf3dc;
+
+            --cream: #F7EBE0;
+            --cream-dark: #eeddd0;
+            --cream-border: #dbc9bc;
+
+            /* ── Status colors ── */
+            --amber-bg: var(--gold-light);
+            --amber-text: var(--gold-dark);
+            --blue-bg: var(--navy-soft);
+            --blue-text: var(--navy);
+            --green-bg: #e1f5ee;
+            --green-text: #085041;
+            --green-border: #9fe1cb;
+            --green-dot: #0f6e56;
+
+            /* ── Neutrals ── */
+            --gray-50: #faf9f7;
+            --gray-100: #f1efe8;
+            --gray-200: #d3d1c7;
+            --gray-400: #918e85;
+            --gray-600: #5f5e5a;
+            --gray-800: #2c2c2a;
+        }
+
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background: var(--cream);
+            color: var(--gray-800);
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px 16px;
+        }
+
+        /* ── TOOLBAR (tidak ikut print) ── */
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            font-family: inherit;
+            transition: opacity 0.15s, box-shadow 0.15s;
+        }
+
+        .btn:hover {
+            opacity: 0.88;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-main) 0%, var(--gold-mid) 100%);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(204, 158, 74, 0.35);
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 4px 14px rgba(204, 158, 74, 0.45);
+            opacity: 1;
+        }
+
+        .btn-ghost {
+            background: #fff;
+            color: var(--gray-600);
+            border: 1px solid var(--cream-border);
+        }
+
+        .btn-ghost:hover {
+            background: var(--cream-dark);
+        }
+
+        /* ── STRUK CARD ── */
+        .struk {
+            background: #fff;
+            border: 1px solid var(--cream-border);
+            border-radius: 14px;
+            width: 100%;
+            max-width: 480px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(10, 29, 75, 0.08);
+        }
+
+        /* Header Navy */
+        .struk-header {
+            background: var(--navy);
+            color: #fff;
+            padding: 28px 28px 22px;
+            text-align: center;
+        }
+
+        .struk-brand {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+
+        .struk-tagline {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.65);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .struk-divider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 14px 0 4px;
+        }
+
+        .struk-divider-dots span {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(204, 158, 74, 0.4);
+        }
+
+        .struk-no {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold-mid);
+            letter-spacing: 0.5px;
+        }
+
+        /* Body */
+        .struk-body {
+            padding: 22px 28px;
+        }
+
+        /* Status badge */
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .status-label {
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .badge-antri {
+            background: var(--amber-bg);
+            color: var(--amber-text);
+        }
+
+        .badge-antri .badge-dot {
+            background: var(--gold-main);
+        }
+
+        .badge-proses {
+            background: var(--blue-bg);
+            color: var(--blue-text);
+        }
+
+        .badge-proses .badge-dot {
+            background: var(--navy);
+        }
+
+        .badge-selesai {
+            background: var(--green-bg);
+            color: var(--green-text);
+        }
+
+        .badge-selesai .badge-dot {
+            background: var(--green-dot);
+        }
+
+        /* Section label */
+        .section-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-400);
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* Info rows */
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .info-key {
+            font-size: 13px;
+            color: var(--gray-400);
+            flex-shrink: 0;
+        }
+
+        .info-val {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-800);
+            text-align: right;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px dashed var(--cream-border);
+            margin: 18px 0;
+        }
+
+        /* Kalkulasi */
+        .calc-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .calc-key {
+            color: var(--gray-600);
+        }
+
+        .calc-val {
+            font-weight: 500;
+            color: var(--gray-800);
+        }
+
+        /* Total box */
+        .total-box {
+            background: var(--gold-shine);
+            border: 1px solid var(--gold-border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .total-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold-dark);
+        }
+
+        .total-val {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        /* Footer struk */
+        .struk-footer {
+            border-top: 1px solid var(--cream-border);
+            padding: 16px 28px;
+            text-align: center;
+        }
+
+        .struk-footer p {
+            font-size: 12px;
+            color: var(--gray-400);
+            line-height: 1.6;
+        }
+
+        .struk-footer strong {
+            color: var(--navy);
+        }
+
+        /* Watermark lunas */
+        .watermark {
+            display: inline-block;
+            border: 2px solid var(--gold-main);
+            color: var(--gold-dark);
+            background: var(--gold-light);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            padding: 3px 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            transform: rotate(-3deg);
+        }
+
+        /* ── PRINT MEDIA QUERY ── */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .toolbar {
+                display: none;
+            }
+
+            .struk {
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+
+            .struk-header {
+                /* Memastikan background navy tercetak jika user mengaktifkan 'Print Background Graphics' */
+                background: var(--navy) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .total-box {
+                background: var(--gold-shine) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    
